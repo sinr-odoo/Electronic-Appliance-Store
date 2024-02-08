@@ -1,0 +1,1 @@
+from . import electronic_appliances_property
