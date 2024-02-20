@@ -1,1 +1,1 @@
-from . import electronic_appliances_property
+from . import electronic_appliances_property, users_details

@@ -2,7 +2,7 @@ from odoo import fields, models
 
 
 class AppliancesPoperty(models.Model):
-    _name = "electronic_appliances_properties"
+    _name = "electronic.appliance.properties"
     _description = "Electronic Appliances Properties"
 
     name = fields.Char(string = 'Product Name', required = True)
@@ -23,3 +23,4 @@ class AppliancesPoperty(models.Model):
     length = fields.Float(string = 'Length')
     weight = fields.Float(string = 'Weight')
     warranty_info = fields.Char(string = 'Warranty Information')
+    customer_id = fields.Many2many('users.details', string="customers")
