@@ -3,9 +3,10 @@
     <menuitem id="eletronics_store_menu_root" name="Electronic Appliances Store">
         <menuitem id="first_level_menu" name="Products">
             <menuitem id="products_menu" name="Buy" action="products_properties_action"></menuitem>
+            <!-- <menuitem id="rent_menu" name="Rent" action="electronic_appliances_property_rent_action"></menuitem> -->
         </menuitem>
-        <menuitem id="users_menu" name="Users">
+        <!-- <menuitem id="users_menu" name="Users">
             <menuitem id="customer_menu" name="Customer" action="customer_action"></menuitem>
-        </menuitem>
+        </menuitem> -->
     </menuitem>
 </odoo>

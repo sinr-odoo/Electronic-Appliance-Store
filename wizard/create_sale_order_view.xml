@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="create_sale_order_action" model="ir.actions.act_window">
+        <field name="name">Create Sale Order</field>
+        <field name="res_model">create.sale.order</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_product_product"/>
+    </record>
+
+    <record id="create_sale_order_action_view_form" model="ir.ui.view">
+        <field name="name">create.sale.order.action.view.form</field>
+        <field name="model">create.sale.order</field>
+        <field name='arch' type='xml'>
+            <form>
+                <group>
+                    <field name="customer_id" string="Customer"/>
+                    <field name='quantity' />
+                </group>
+                <footer>
+                    <button string="Create Order" name="create_sale_order" type="object" class="btn-primary"/>
+                    <button string="Discard" special="cancel"/>
+                </footer>
+            </form>
+        </field>        
+    </record>
+</odoo>
