@@ -11,7 +11,6 @@ class CreatePurchaseOrder(models.Model):
         products = self._context.get("active_ids",[])
 
         self.env['purchase.order'].create({
-            'name': f'PO/{products[0]}/{self.vendor_id.id}',
             'partner_id': self.vendor_id.id,
             'order_line': [
                 Command.create({

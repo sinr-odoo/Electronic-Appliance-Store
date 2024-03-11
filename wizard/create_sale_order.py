@@ -11,7 +11,6 @@ class CreateSaleOrder(models.Model):
         products = self._context.get("active_ids",[])
 
         self.env['sale.order'].create({
-            'name': f'SO/{products[0]}/{self.customer_id.id}',
             'partner_id': self.customer_id.id,
             'order_line': [
                 Command.create({

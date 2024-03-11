@@ -3,7 +3,7 @@ from odoo import api, fields, models
 class ProductProduct(models.Model):
     _inherit= 'product.product'
 
-    brand = fields.Char(string = 'Brand', required = True, default=None)
+    brand = fields.Char(string = 'Brand', default=None)
     model_number = fields.Char(string = 'Model Number')
     condition = fields.Selection(string = 'Condition', selection = [
         ('new', 'New'),
@@ -19,3 +19,8 @@ class ProductProduct(models.Model):
     warranty_info = fields.Char(string = 'Warranty Information')
     customer_ids = fields.Many2many('res.users')
     vendor_ids = fields.Many2many('res.partner')
+
+    @api.depends("product_tmpl_id.write_date")
+    def _compute_write_date(self):
+        for record in self:
+            record.write_date = record.write_date or self.env.cr.now()

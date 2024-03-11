@@ -4,6 +4,8 @@
         <field name="name">Products</field>
         <field name="res_model">product.product</field>
         <field name="view_mode">kanban,form,tree</field>
+        <field name="domain">[('rent','=',False)]</field>
+        <field name="context">{'search_default_available':True}</field>
     </record>
 
     <record id="product_template_form_view_inherit" model="ir.ui.view"> 
@@ -39,12 +41,13 @@
                                 <field name="active" invisible="1"/>
                                 <field name="detailed_type" invisible="1"/>
                                 <field name="variant_seller_ids" invisible="1"/>
+                                <field name="uom_id" invisible="1"></field>
                                 <field name="height"/>
                                 <field name="width"/>
                                 <field name="length"/>
                                 <field name="weight"/>
                             </group>
-                            <group>
+                            <group name="extra_details">
                                 <field name="condition"/>
                                 <field name="list_price" string="Sale Price"/>
                                 <field name="standard_price" string="Cost Price"/>
@@ -61,6 +64,21 @@
                     </page>
                 </notebook>
             </xpath>
+        </field>
+    </record>
+    
+    <record id="product_view_search_view" model="ir.ui.view">
+        <field name="name">product.view.search.view</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_search_form_view"/>
+        <field name="arch" type="xml">
+            <search>
+                <field name="brand" string="Brand"/>
+                <group>
+                    <filter string="brand" name="Brand" context="{'group_by':'brand'}"/>
+                    <filter string="available" name="available" domain="[('available','=','true')]"/>
+                </group>
+            </search>
         </field>
     </record>
 </odoo>

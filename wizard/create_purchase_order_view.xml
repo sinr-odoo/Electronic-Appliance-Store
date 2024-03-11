@@ -5,7 +5,6 @@
         <field name="res_model">create.purchase.order</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
-        <field name="binding_model_id" ref="model_create_purchase_order"/>
     </record>
 
     <record id="create_purchase_order_view_form" model="ir.ui.view">
