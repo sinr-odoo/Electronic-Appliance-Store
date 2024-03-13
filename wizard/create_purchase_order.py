@@ -1,6 +1,6 @@
 from odoo import Command, fields, models
 
-class CreatePurchaseOrder(models.Model):
+class CreatePurchaseOrder(models.TransientModel):
     _name= "create.purchase.order"
     _description= "Create Purchase Order"
 

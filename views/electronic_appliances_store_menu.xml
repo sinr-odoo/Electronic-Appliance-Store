@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <odoo>
     <menuitem id="eletronics_store_menu_root" name="Electronic Appliances Store">
-        <menuitem id="products_menu" name="Buy" action="products_properties_action"></menuitem>
-        <menuitem id="rent_menu" name="Rent" action="products_rent_properties_action"></menuitem>
+        <menuitem id="products_menu" name="Sell Products" action="products_properties_action"></menuitem>
+        <menuitem id="rent_menu" name="Rent Products" action="products_rent_properties_action"></menuitem>
     </menuitem>
 </odoo>

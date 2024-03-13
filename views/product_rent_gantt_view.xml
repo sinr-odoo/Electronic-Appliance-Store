@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="product_rent_gantt_action" model="ir.actions.act_window">
+        <field name="name">Gantt View</field>
+        <field name="res_model">customers</field>
+        <field name="view_mode">gantt</field>
+        <field name="domain">[('product_id','=',active_id)]</field>
+    </record>
+
+    <record id="product_rent_gantt_view" model="ir.ui.view">
+        <field name="name">product.rent.gantt.view</field>
+        <field name="model">customers</field>
+        <field name="arch" type="xml">
+            <gantt date_start = "order_date"
+            date_stop="deadline_date"
+            default_scale='year'
+            color="user_id"
+            string="product_id"
+            >
+            </gantt>
+        </field>
+    </record>
+</odoo>

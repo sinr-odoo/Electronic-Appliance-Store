@@ -5,6 +5,7 @@
         <field name="res_model">product.product</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="domain">[('rent','=',True)]</field>
+        <field name="context">{'search_default_available':True}</field>
     </record>
 
     <record id="products_rent_properties_form" model="ir.ui.view">
@@ -17,24 +18,20 @@
             </xpath>
             <xpath expr="//group[@name='details']" position='after'>
                 <group invisible="not rent">
-                    <field name="sale_price"/>
+                    <field name="list_price" string="Per Month Price"/>
                     <field name="standard_price" string="Cost Price"/>
-                    <field name="per_month_price"/>
-                    <field name="rent_period"/>
+                    <!-- <field name="per_month_price"/> -->
+                    <!-- <field name="rent_period"/> -->
                 </group>
             </xpath>
             <xpath expr="//group[@name='extra_details']" position='attributes'>
                 <attribute name="invisible">rent</attribute>
             </xpath>
+            
+            <xpath expr="//header" position="inside">
+                <button name="%(product_rent_gantt_action)d" string="Gantt View" type="action" invisible="not rent"/>
+            </xpath>
         </field>
     </record>
 
-    <!-- <record id="products_rent_view_gantt" model="ir.ui.view">
-        <field name="name">products.rent.view.gantt</field>
-        <field name="model">product.product</field>
-        <field name="arch" type="xml">
-            <gantt date_start
-        </field>
-    </record> -->
-    
 </odoo>

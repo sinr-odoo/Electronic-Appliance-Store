@@ -17,7 +17,7 @@ class ProductProduct(models.Model):
     length = fields.Float(string = 'Length')
     weight = fields.Float(string = 'Weight')
     warranty_info = fields.Char(string = 'Warranty Information')
-    customer_ids = fields.Many2many('res.users')
+    customer_ids = fields.One2many('customers', 'product_id')
     vendor_ids = fields.Many2many('res.partner')
 
     @api.depends("product_tmpl_id.write_date")

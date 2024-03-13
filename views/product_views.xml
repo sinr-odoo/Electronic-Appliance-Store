@@ -60,7 +60,13 @@
                         <field name="seller_ids"/>
                     </page>
                     <page string="Customers">
-                        <field name="customer_ids"/>
+                        <field name="customer_ids">
+                            <tree>
+                                <field name="user_id"/>
+                                <field name="order_date"/>
+                                <field name="quantity"/>
+                            </tree>
+                        </field>
                     </page>
                 </notebook>
             </xpath>
