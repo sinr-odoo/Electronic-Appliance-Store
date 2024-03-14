@@ -14,7 +14,7 @@ class Customers(models.Model):
     @api.depends('order_date', 'quantity')
     def _compute_deadline(self):
         for record in self:
-            if(record.product_id.rent):
+            if(record.product_id.rent and record.order_date):
                 record.deadline_date = record.order_date + relativedelta(months=record.quantity)
             else:
                 record.deadline_date = False

@@ -13,6 +13,7 @@
         'views/product_rent_gantt_view.xml',
         'views/product_views.xml',
         'views/product_rent_views.xml',
+        'views/product_analysis_view.xml',
         'views/electronic_appliances_store_menu.xml',
     ],
     'application': True,

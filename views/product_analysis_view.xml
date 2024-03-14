@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="product_analysis_action" model="ir.actions.act_window">
+        <field name="name">Products Analysis</field>
+        <field name="res_model">customers</field>
+        <field name="view_mode">graph</field>
+    </record>
+
+    <record id="product_analysis_view_graph" model="ir.ui.view">
+        <field name="name">product.analysis.view.graph</field>
+        <field name="model">customers</field>
+        <field name="arch" type="xml">
+            <graph>
+                <field name="order_date" type="row" interval="day"/>
+                <field name="product_id" type="col"/>
+            </graph>
+        </field>
+    </record>
+</odoo> 
